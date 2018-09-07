@@ -355,6 +355,7 @@ public class StudentDao {
 
     /**
      * 删除某一表
+     * 测试分支创建和合并功能
      */
     public void dropTable(){
         SQLiteDatabase db = studentDBHelper.getWritableDatabase();
