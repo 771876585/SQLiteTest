@@ -1,5 +1,6 @@
 package com.yezh.sqlite.sqlitetest;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
@@ -10,6 +11,8 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.yezh.sqlite.sqlitetest.word.WordsActivity;
 
 import java.util.List;
 
@@ -49,6 +52,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button query1Button = (Button)findViewById(R.id.query1Button);
         Button query2Button = (Button)findViewById(R.id.query2Button);
         Button query3Button = (Button)findViewById(R.id.query3Button);
+
+        Button btNext = (Button)findViewById(R.id.bt_next);
+        btNext.setOnClickListener(this);
 
         executeButton.setOnClickListener(this);
         insertButton.setOnClickListener(this);
@@ -132,6 +138,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Student student = studentDao.getMaxStudentAge();
                 msg2.append("\n(" + student.id + ", " + student.studentName + ", " + student.className + ", " + student.age + ")");
                 showSQLMsg.setText(msg2);
+                break;
+            case R.id.bt_next:
+               // startActivity(new Intent(this, WeatherActivity.class));
+                //startActivity(new Intent(this, FallingActivity.class));
+//                startActivity(new Intent(this, PieActivity.class));
+                startActivity(new Intent(this, WordsActivity.class));
+//                startActivity(new Intent(this, PDFActivity.class));
+//                startActivity(new Intent(this, ScreenActivity.class));
+
                 break;
 
             default:

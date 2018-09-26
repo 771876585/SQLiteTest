@@ -83,6 +83,11 @@
             android:layout_weight="1"
             android:text="比较查询" />
     </LinearLayout>
+    <Button
+        android:id="@+id/bt_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="跳转到下一页"/>
 
     <TextView
         android:id="@+id/showSQLMsg"

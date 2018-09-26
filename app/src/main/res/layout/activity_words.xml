@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ListView
+        android:id="@+id/listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never"
+        android:divider="#f2f2f2"
+        android:dividerHeight="0.5dp"/>
+    <TextView
+        android:id="@+id/comment_bar"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"
+        android:background="#f2f2f2"
+        android:textColor="@color/colorPrimary"
+        android:text="A"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginRight="10dp"
+        android:orientation="horizontal">
+        <TextView
+            android:visibility="invisible"
+            android:id="@+id/tv_dialog"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:background="@color/colorPrimary"
+            android:text="A"
+            android:layout_marginRight="10dp"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_corner"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp">
+            <com.yezh.sqlite.sqlitetest.word.WordsView
+                android:id="@+id/wordsView"
+                android:layout_width="20dp"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+    </LinearLayout>
+</RelativeLayout>
