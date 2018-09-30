@@ -27,13 +27,20 @@ dependencies {
     })
     //okHttp
     //retrofit
+    compile files('libs/pinyin4j-2.5.0.jar')
+    compile files('libs/volley.jar')
+
+//    compile 'tv.danmaku.ijk.media:ijkplayer-java:0.8.3'
+//    compile 'tv.danmaku.ijk.media:ijkplayer-armv7a:0.8.3'
+//    compile 'tv.danmaku.ijk.media:ijkplayer-armv5:0.8.3'
+//    compile 'tv.danmaku.ijk.media:ijkplayer-x86:0.8.3'
     compile 'com.android.support:appcompat-v7:26.+'
     compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha7'
+    compile 'com.squareup.okio:okio:1.5.0'
     compile 'com.squareup.okhttp3:okhttp:3.2.0'
     compile 'com.squareup.retrofit2:retrofit:2.0.2'
     compile 'com.squareup.retrofit2:converter-gson:2.0.2'
     compile 'com.squareup.okhttp3:logging-interceptor:3.2.0'
     compile 'com.joanzapata.pdfview:android-pdfview:1.0.4@aar'
     testCompile 'junit:junit:4.12'
-    compile files('libs/pinyin4j-2.5.0.jar')
 }

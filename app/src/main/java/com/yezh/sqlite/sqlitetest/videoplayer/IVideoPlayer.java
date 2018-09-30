@@ -1,0 +1,146 @@
+package com.yezh.sqlite.sqlitetest.videoplayer;
+
+import java.util.Map;
+
+/**
+ * Created by yezh on 2018/9/28 14:35.
+ */
+
+public interface IVideoPlayer {
+
+    /**
+     * 设置视频url，以及headers
+     * @param url 可以是本地也可以是网络视频
+     * @param headers
+     */
+    void setUp(String url, Map<String, String> headers);
+
+    /**
+     * 开始播放
+     */
+    void start();
+
+    /**
+     * 从置顶的位置开始播放
+     * @param position
+     */
+    void start(long position);
+
+    /**
+     * 重新播放，播放器被暂停，播放错误，播放完毕，需要调用此方法重新播放
+     */
+    void restart();
+
+    /**
+     * 暂停播放
+     */
+    void pause();
+
+    /**
+     * seek到指定位置继续播放
+     * @param pos
+     */
+    void seekTo(long pos);
+
+    /**
+     * 设置音量
+     * @param voice
+     */
+    void setVoice(int voice);
+
+    /**
+     * 开始播放时，是否从上一次位置继续播放
+     * @param continueFromLastPosition true 接着上一次位置播放，false从头开始播放
+     */
+    void continueFromLastPosition(boolean continueFromLastPosition);
+
+    /**
+     * 播放器在当前的播放状态
+     * @return
+     */
+    boolean isIdle();
+    boolean isPreparing();
+    boolean isPrepared();
+    boolean isBufferingPlaying();
+    boolean isBufferingPaused();
+    boolean isPlaying();
+    boolean isPaused();
+    boolean isError();
+    boolean isCompleted();
+
+    /**
+     * 播放器模式
+     * @return
+     */
+    boolean isFullScreen();
+    boolean isTinyWindow();
+    boolean isNormal();
+
+    /**
+     * 获取最大音量
+     * @return
+     */
+    int getMaxVoice();
+
+    /**
+     * 获取当前音量
+     * @return
+     */
+    int getVoice();
+
+    /**
+     * 获取视频总时长，毫秒
+     * @return
+     */
+    long getDuration();
+
+    /**
+     * 获取当前的播放位置，毫秒
+     * @return
+     */
+    long getCurrentPosition();
+
+    /**
+     * 获取视频缓冲百分比
+     * @return
+     */
+    long getBufferPercentage();
+
+    /**
+     * 进入全屏模式
+     */
+    void enterFullScreen();
+
+    /**
+     * 退出全屏模式
+     *
+     * @return true 退出
+     */
+    boolean exitFullScreen();
+
+    /**
+     * 进入小窗口模式
+     */
+    void enterTinyWindow();
+
+    /**
+     * 退出小窗口模式
+     *
+     * @return true 退出小窗口
+     */
+    boolean exitTinyWindow();
+
+    /**
+     * 此处只释放播放器（如果要释放播放器并恢复控制器状态需要调用{@link #release()}方法）
+     * 不管是全屏、小窗口还是Normal状态下控制器的UI都不恢复初始状态
+     * 这样以便在当前播放器状态下可以方便的切换不同的清晰度的视频地址
+     */
+    void releasePlayer();
+
+    /**
+     * 释放INiceVideoPlayer，释放后，内部的播放器被释放掉，同时如果在全屏、小窗口模式下都会退出
+     * 并且控制器的UI也应该恢复到最初始的状态.
+     */
+    void release();
+
+}

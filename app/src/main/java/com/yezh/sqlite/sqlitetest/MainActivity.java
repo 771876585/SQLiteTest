@@ -12,6 +12,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.yezh.sqlite.sqlitetest.videoplayer.VideoPlayerActivity;
 import com.yezh.sqlite.sqlitetest.word.WordsActivity;
 
 import java.util.List;
@@ -55,6 +56,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Button btNext = (Button)findViewById(R.id.bt_next);
         btNext.setOnClickListener(this);
+        Button btnTest = (Button)findViewById(R.id.bt_test);
+        btnTest.setOnClickListener(this);
 
         executeButton.setOnClickListener(this);
         insertButton.setOnClickListener(this);
@@ -140,6 +143,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 showSQLMsg.setText(msg2);
                 break;
             case R.id.bt_next:
+
                // startActivity(new Intent(this, WeatherActivity.class));
                 //startActivity(new Intent(this, FallingActivity.class));
 //                startActivity(new Intent(this, PieActivity.class));
@@ -148,7 +152,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //                startActivity(new Intent(this, ScreenActivity.class));
 
                 break;
-
+            case R.id.bt_test:
+//                startActivity(new Intent(this, VolleyActivity.class));
+                startActivity(new Intent(this, VideoPlayerActivity.class));
+//                startActivity(new Intent(this, VolleyOkhttp3Activity.class));
+                break;
             default:
 
                 break;

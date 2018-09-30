@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name=".MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -22,8 +23,12 @@
         <activity android:name=".myview.FallingActivity" />
         <activity android:name=".myview.PieActivity" />
         <activity android:name=".pdfview.PDFActivity" />
-        <activity android:name=".word.WordsActivity"></activity>
-        <activity android:name=".ScreenActivity"/>
+        <activity android:name=".word.WordsActivity" />
+        <activity android:name=".ScreenActivity" />
+        <activity android:name=".volley.VolleyActivity" />
+        <activity android:name=".videoplayer.VideoPlayerActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity android:name=".volleyokhttp3.VolleyOkhttp3Activity"></activity>
     </application>
 
 </manifest>
