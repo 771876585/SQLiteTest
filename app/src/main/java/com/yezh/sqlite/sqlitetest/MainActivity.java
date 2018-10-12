@@ -12,7 +12,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.yezh.sqlite.sqlitetest.myvideoplayer.example.FullWindowActivity;
+import com.yezh.sqlite.sqlitetest.courselessonvideo.LessonVideoPlayerActivity;
 import com.yezh.sqlite.sqlitetest.word.WordsActivity;
 
 import java.util.List;
@@ -156,7 +156,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //                startActivity(new Intent(this, VolleyActivity.class));
 //                startActivity(new Intent(this, VideoPlayerActivity.class));
 //                startActivity(new Intent(this, Main2Activity.class));
-                startActivity(new Intent(this, FullWindowActivity.class));
+//                startActivity(new Intent(this, FullWindowActivity.class));
+                startActivity(new Intent(this, LessonVideoPlayerActivity.class));
 //                startActivity(new Intent(this, VolleyOkhttp3Activity.class));
 
 
