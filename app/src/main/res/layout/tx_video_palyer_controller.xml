@@ -33,6 +33,18 @@
             android:textColor="@android:color/white"
             android:textSize="13sp"/>
     </LinearLayout>
+    <!-- 目录列表 -->
+    <LinearLayout
+        android:id="@+id/ll_catalogue"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:orientation="vertical">
+        <ListView
+            android:id="@+id/myListView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
     <!--改变播放位置-->
     <LinearLayout
         android:id="@+id/change_position"
@@ -303,6 +315,14 @@
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:src="@drawable/ic_player_enlarge"/>
+        <TextView
+            android:id="@+id/catalogue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:text="目录"
+            android:textSize="14sp"
+            android:visibility="gone"/>
     </LinearLayout>
     <!--右下角初始显示的总时长-->
     <TextView

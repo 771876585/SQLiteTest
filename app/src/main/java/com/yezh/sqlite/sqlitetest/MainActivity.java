@@ -12,7 +12,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.yezh.sqlite.sqlitetest.videoplayer.VideoPlayerActivity;
+import com.yezh.sqlite.sqlitetest.myvideoplayer.example.FullWindowActivity;
 import com.yezh.sqlite.sqlitetest.word.WordsActivity;
 
 import java.util.List;
@@ -154,8 +154,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.bt_test:
 //                startActivity(new Intent(this, VolleyActivity.class));
-                startActivity(new Intent(this, VideoPlayerActivity.class));
+//                startActivity(new Intent(this, VideoPlayerActivity.class));
+//                startActivity(new Intent(this, Main2Activity.class));
+                startActivity(new Intent(this, FullWindowActivity.class));
 //                startActivity(new Intent(this, VolleyOkhttp3Activity.class));
+
+
+                //跳转到其他app应用
+//                Intent intent = new Intent(Intent.ACTION_MAIN);
+//                intent.addCategory(Intent.CATEGORY_LAUNCHER);
+//                ComponentName cn = new ComponentName("com.qiyeyuedu.client",
+//                        "com.cmread.bplusc.bookshelf.LocalMainActivity");
+//                intent.setComponent(cn);
+//                startActivity(intent);
                 break;
             default:
 
