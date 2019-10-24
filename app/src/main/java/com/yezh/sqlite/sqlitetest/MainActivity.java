@@ -13,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.yezh.sqlite.sqlitetest.courselessonvideo.LessonVideoPlayerActivity;
+import com.yezh.sqlite.sqlitetest.update.UpdateService;
 import com.yezh.sqlite.sqlitetest.word.WordsActivity;
 
 import java.util.List;
@@ -42,6 +43,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             adapter = new StudentListAdapter(this, studentList);
             showDateListView.setAdapter(adapter);
         }
+
+        //开始下载服务
+        startService(new Intent().setClass(this, UpdateService.class));
 
     }
 
