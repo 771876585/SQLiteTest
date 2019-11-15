@@ -13,7 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.yezh.sqlite.sqlitetest.courselessonvideo.LessonVideoPlayerActivity;
-import com.yezh.sqlite.sqlitetest.word.WordsActivity;
+import com.yezh.sqlite.sqlitetest.pdfview.PDFActivity;
 
 import java.util.List;
 
@@ -150,8 +150,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                // startActivity(new Intent(this, WeatherActivity.class));
                 //startActivity(new Intent(this, FallingActivity.class));
 //                startActivity(new Intent(this, PieActivity.class));
-                startActivity(new Intent(this, WordsActivity.class));
-//                startActivity(new Intent(this, PDFActivity.class));
+//                startActivity(new Intent(this, WordsActivity.class));
+                startActivity(new Intent(this, PDFActivity.class));
 //                startActivity(new Intent(this, ScreenActivity.class));
 
                 break;

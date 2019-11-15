@@ -19,13 +19,22 @@ public class PDFActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pdf);
         PDFView pdfView = (PDFView)findViewById(R.id.pdfView);
-        pdfView.fromAsset("offer.pdf").defaultPage(1)
-                .onPageChange(new OnPageChangeListener() {
-                    @Override
-                    public void onPageChanged(int page, int pageCount) {
-                        // 当用户在翻页时候将回调。
-                        Toast.makeText(getApplicationContext(), page + " / " + pageCount, Toast.LENGTH_SHORT).show();
-                    }
-                }).load();
+        try {
+            pdfView.fromAsset("123.pdf").defaultPage(1)
+                    .onPageChange(new OnPageChangeListener() {
+                        @Override
+                        public void onPageChanged(int page, int pageCount) {
+                            // 当用户在翻页时候将回调。
+                            Toast.makeText(getApplicationContext(), page + " / " + pageCount, Toast.LENGTH_SHORT).show();
+                        }
+                    }).load();
+        }catch (Exception e){
+            Toast.makeText(this, "文件不存在或已损坏", Toast.LENGTH_SHORT).show();
+            finish();
+        }
+
+        WaterMarkView markView = (WaterMarkView)findViewById(R.id.water_mark);
+        markView.setUserName("PDF名称");
+
     }
 }
