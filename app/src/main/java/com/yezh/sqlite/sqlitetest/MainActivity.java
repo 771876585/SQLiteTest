@@ -56,6 +56,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button query1Button = (Button)findViewById(R.id.query1Button);
         Button query2Button = (Button)findViewById(R.id.query2Button);
         Button query3Button = (Button)findViewById(R.id.query3Button);
+        Button clickBtn = findViewById(R.id.clickBtn);
 
         Button btNext = (Button)findViewById(R.id.bt_next);
         btNext.setOnClickListener(this);
@@ -69,6 +70,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         query1Button.setOnClickListener(this);
         query2Button.setOnClickListener(this);
         query3Button.setOnClickListener(this);
+        clickBtn.setOnClickListener(this);
 
         inputSqlMsg = (EditText)findViewById(R.id.inputSqlMsg);
         showSQLMsg = (TextView)findViewById(R.id.showSQLMsg);
@@ -171,6 +173,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //                        "com.cmread.bplusc.bookshelf.LocalMainActivity");
 //                intent.setComponent(cn);
 //                startActivity(intent);
+                break;
+            case R.id.clickBtn:
+                startActivity(new Intent(this, NextPaperActivity.class));
                 break;
             default:
 

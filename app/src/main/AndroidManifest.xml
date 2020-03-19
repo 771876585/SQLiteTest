@@ -30,6 +30,8 @@
         <activity android:name=".word.WordsActivity" />
         <activity android:name=".ScreenActivity" />
         <activity android:name=".volley.VolleyActivity" />
+        <activity android:name=".musicplayer.GaussianBlurActivity"/>
+        <activity android:name=".NextPaperActivity"/>
         <activity android:name=".videoplayer.VideoPlayerActivity"
             android:configChanges="orientation|keyboardHidden|screenSize" />
         <activity android:name=".volleyokhttp3.VolleyOkhttp3Activity" />
