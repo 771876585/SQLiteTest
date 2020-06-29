@@ -5,14 +5,18 @@
     android:orientation="vertical"
     android:padding="10dp">
 
-    <Button
-        android:id="@+id/gaussianBlur"
+    <ImageView
+        android:id="@+id/iv_cache"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="高斯模糊"/>
-    <Button
-        android:id="@+id/cacheBtn"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:id="@+id/iv_cache2"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="设置缓存图片"/>
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/tv_cache"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 </LinearLayout>
