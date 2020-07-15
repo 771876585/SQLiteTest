@@ -15,4 +15,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="设置缓存图片"/>
+    <Button
+        android:id="@+id/constraintBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ConstraintLayout的使用"/>
 </LinearLayout>

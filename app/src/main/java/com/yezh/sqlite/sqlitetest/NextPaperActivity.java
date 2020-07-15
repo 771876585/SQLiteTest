@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.yezh.sqlite.sqlitetest.bitmapcache.BitmapCacheActivity;
+import com.yezh.sqlite.sqlitetest.constraintlayout.ConstraintLayoutActivity;
 import com.yezh.sqlite.sqlitetest.musicplayer.GaussianBlurActivity;
 
 /**
@@ -23,6 +24,7 @@ public class NextPaperActivity extends AppCompatActivity implements View.OnClick
         Button gaussianBlur = findViewById(R.id.gaussianBlur);
         gaussianBlur.setOnClickListener(this);
         findViewById(R.id.cacheBtn).setOnClickListener(this);
+        findViewById(R.id.constraintBtn).setOnClickListener(this);
     }
 
     @Override
@@ -34,7 +36,9 @@ public class NextPaperActivity extends AppCompatActivity implements View.OnClick
             case R.id.cacheBtn:
                 startActivity(new Intent(this, BitmapCacheActivity.class));
                 break;
-
+            case R.id.constraintBtn:
+                startActivity(new Intent(this, ConstraintLayoutActivity.class));
+                break;
                 default:
                     break;
         }
