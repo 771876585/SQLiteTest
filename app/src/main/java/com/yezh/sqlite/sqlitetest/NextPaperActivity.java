@@ -25,6 +25,7 @@ public class NextPaperActivity extends AppCompatActivity implements View.OnClick
         gaussianBlur.setOnClickListener(this);
         findViewById(R.id.cacheBtn).setOnClickListener(this);
         findViewById(R.id.constraintBtn).setOnClickListener(this);
+        findViewById(R.id.rxJava2Btn).setOnClickListener(this);
     }
 
     @Override
@@ -38,6 +39,9 @@ public class NextPaperActivity extends AppCompatActivity implements View.OnClick
                 break;
             case R.id.constraintBtn:
                 startActivity(new Intent(this, ConstraintLayoutActivity.class));
+                break;
+            case R.id.rxJava2Btn:
+                startActivity(new Intent(this, RxJava2Activity.class));
                 break;
                 default:
                     break;
