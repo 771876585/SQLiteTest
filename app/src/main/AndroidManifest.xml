@@ -15,7 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".MainActivity"
+        <activity android:name=".lockpwd.LockPwdActivity" />
+        <activity
+            android:name=".MainActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,12 +32,13 @@
         <activity android:name=".word.WordsActivity" />
         <activity android:name=".ScreenActivity" />
         <activity android:name=".volley.VolleyActivity" />
-        <activity android:name=".musicplayer.GaussianBlurActivity"/>
-        <activity android:name=".bitmapcache.BitmapCacheActivity"/>
-        <activity android:name=".constraintlayout.ConstraintLayoutActivity"/>
+        <activity android:name=".musicplayer.GaussianBlurActivity" />
+        <activity android:name=".bitmapcache.BitmapCacheActivity" />
+        <activity android:name=".constraintlayout.ConstraintLayoutActivity" />
         <activity android:name=".RxJava2Activity" />
-        <activity android:name=".NextPaperActivity"/>
-        <activity android:name=".videoplayer.VideoPlayerActivity"
+        <activity android:name=".NextPaperActivity" />
+        <activity
+            android:name=".videoplayer.VideoPlayerActivity"
             android:configChanges="orientation|keyboardHidden|screenSize" />
         <activity android:name=".volleyokhttp3.VolleyOkhttp3Activity" />
         <activity android:name=".myvideoplayer.example.Main2Activity" />
@@ -43,46 +46,43 @@
             android:name=".myvideoplayer.example.TinyWindowPlayActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="可使用小窗口模式播放"
-            android:screenOrientation="portrait">
-        </activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".myvideoplayer.example.RecyclerViewActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="在RecylerView视频列表中"
-            android:screenOrientation="portrait">
-        </activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".myvideoplayer.example.ChangeClarityActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="在全屏时可以切换清晰度"
-            android:screenOrientation="portrait">
-        </activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".myvideoplayer.example.UseInFragActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="在fragment中使用"
-            android:screenOrientation="portrait">
-        </activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".myvideoplayer.example.ProcessHome1Activity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="Activity中时处理播放时按下Home键"
-            android:screenOrientation="portrait">
-        </activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".myvideoplayer.example.ProcessHome2Activity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="Fragment中时处理播放时按下Home键"
-            android:screenOrientation="portrait">
-        </activity>
-        <activity android:name=".myvideoplayer.example.FullWindowActivity"
-            android:screenOrientation="landscape"
-            android:configChanges="keyboardHidden|orientation"/>
-        <activity android:name=".courselessonvideo.LessonVideoPlayerActivity"
-            android:screenOrientation="landscape"
-            android:configChanges="orientation|keyboardHidden|screenSize"/>
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".myvideoplayer.example.FullWindowActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".courselessonvideo.LessonVideoPlayerActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="landscape" />
 
-        <service android:name=".update.UpdateService"
+        <service
+            android:name=".update.UpdateService"
             android:enabled="true" />
     </application>
 
