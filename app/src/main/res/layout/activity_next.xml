@@ -30,4 +30,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="手势密码的使用"/>
+    <Button
+        android:id="@+id/stepArcBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="计步器进度条的使用"/>
 </LinearLayout>

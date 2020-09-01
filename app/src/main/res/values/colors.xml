@@ -5,4 +5,7 @@
     <color name="colorAccent">#FF4081</color>
 
     <color name="dialog_bg">#bc000000</color>
+    <color name="yellow">#FFA500</color>
+    <color name="red">#FF0000</color>
+    <color name="grey">#808080</color>
 </resources>

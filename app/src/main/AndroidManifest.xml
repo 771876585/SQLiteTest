@@ -15,6 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".stepview.StepArcActivity"></activity>
         <activity android:name=".lockpwd.LockPwdActivity" />
         <activity
             android:name=".MainActivity"
