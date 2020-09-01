@@ -9,6 +9,7 @@ import android.widget.Button;
 
 import com.yezh.sqlite.sqlitetest.bitmapcache.BitmapCacheActivity;
 import com.yezh.sqlite.sqlitetest.constraintlayout.ConstraintLayoutActivity;
+import com.yezh.sqlite.sqlitetest.flowlayout.FlowActivity;
 import com.yezh.sqlite.sqlitetest.lockpwd.LockPwdActivity;
 import com.yezh.sqlite.sqlitetest.musicplayer.GaussianBlurActivity;
 import com.yezh.sqlite.sqlitetest.stepview.StepArcActivity;
@@ -30,6 +31,7 @@ public class NextPaperActivity extends AppCompatActivity implements View.OnClick
         findViewById(R.id.rxJava2Btn).setOnClickListener(this);
         findViewById(R.id.lockPwdBtn).setOnClickListener(this);
         findViewById(R.id.stepArcBtn).setOnClickListener(this);
+        findViewById(R.id.flowLayoutBtn).setOnClickListener(this);
     }
 
     @Override
@@ -52,6 +54,9 @@ public class NextPaperActivity extends AppCompatActivity implements View.OnClick
                 break;
             case R.id.stepArcBtn:
                 startActivity(new Intent(this, StepArcActivity.class));
+                break;
+            case R.id.flowLayoutBtn:
+                startActivity(new Intent(this, FlowActivity.class));
                 break;
                 default:
                     break;
