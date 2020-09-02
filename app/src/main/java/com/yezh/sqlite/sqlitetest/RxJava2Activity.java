@@ -6,7 +6,12 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
+import io.reactivex.Notification;
 import io.reactivex.Observable;
+import io.reactivex.ObservableEmitter;
+import io.reactivex.ObservableOnSubscribe;
+import io.reactivex.Observer;
+import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
 
 /**
@@ -756,15 +761,87 @@ public class RxJava2Activity extends AppCompatActivity {
         //startWith() & startWithArray() end
 
         //25.count() start
-        Observable.just(1,2,3)
-                .count()
-                .subscribe(new Consumer<Long>() {
-                    @Override
-                    public void accept(Long aLong) throws Exception {
-                        Log.e(TAG, "========accept  " + aLong);
-                    }
-                });
+//        Observable.just(1,2,3)
+//                .count()
+//                .subscribe(new Consumer<Long>() {
+//                    @Override
+//                    public void accept(Long aLong) throws Exception {
+//                        Log.e(TAG, "========accept  " + aLong);
+//                    }
+//                });
         //count() end
+
+        //26.delay() start
+//        Observable.just(1,2,3)
+//                .delay(3, TimeUnit.SECONDS)
+//                .subscribe(new Observer<Integer>() {
+//                    @Override
+//                    public void onSubscribe(Disposable disposable) {
+//                        Log.e(TAG, "========onSubscribe  ");
+//                    }
+//
+//                    @Override
+//                    public void onNext(Integer integer) {
+//                        Log.e(TAG, "========onNext  " + integer);
+//                    }
+//
+//                    @Override
+//                    public void onError(Throwable throwable) {
+//
+//                    }
+//
+//                    @Override
+//                    public void onComplete() {
+//                        Log.e(TAG, "========onComplete  ");
+//                    }
+//                });
+        //delay() end
+
+        //27.doOnEach() start
+        //doOnNext()
+        Observable.create(new ObservableOnSubscribe<Integer>() {
+            @Override
+            public void subscribe(ObservableEmitter<Integer> observableEmitter) throws Exception {
+                observableEmitter.onNext(1);
+                observableEmitter.onNext(2);
+                observableEmitter.onNext(3);
+                observableEmitter.onComplete();
+            }
+        })
+                .doOnNext(new Consumer<Integer>() {
+                    @Override
+                    public void accept(Integer integer) throws Exception {
+                        Log.e(TAG, "========doOnNext  " +integer);
+                    }
+                })
+                .doOnEach(new Consumer<Notification<Integer>>() {
+            @Override
+            public void accept(Notification<Integer> integerNotification) throws Exception {
+                Log.e(TAG, "========doOnEach  " + integerNotification.getValue());
+            }
+        })
+                .subscribe(new Observer<Integer>() {
+            @Override
+            public void onSubscribe(Disposable disposable) {
+                Log.e(TAG, "========onSubscribe  ");
+            }
+
+            @Override
+            public void onNext(Integer integer) {
+                Log.e(TAG, "========onNext  "+integer);
+            }
+
+            @Override
+            public void onError(Throwable throwable) {
+                Log.e(TAG, "========onError  ");
+            }
+
+            @Override
+            public void onComplete() {
+                Log.e(TAG, "========onComplete  ");
+            }
+        });
+        //doOnEach() end
 
     }
 
