@@ -62,6 +62,21 @@ public class AIDLClientActivity extends AppCompatActivity implements View.OnClic
         bindService(intent, serviceConnection, BIND_AUTO_CREATE);
     }
 
+    /**
+     * binder可能会意外死亡，比如Service crash，Client监听到Binder死亡后可以进行重连服务器等操作
+     */
+    IBinder.DeathRecipient deathRecipient = new IBinder.DeathRecipient() {
+        @Override
+        public void binderDied() {
+            if(messageSender != null){
+                messageSender.asBinder().unlinkToDeath(this, 0);
+                messageSender = null;
+            }
+            //重连服务或者其他操作
+            bindServiceByAidl();
+        }
+    };
+
     ServiceConnection serviceConnection = new ServiceConnection() {
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
@@ -71,6 +86,8 @@ public class AIDLClientActivity extends AppCompatActivity implements View.OnClic
             messageModel.setFrom("Client");
             messageModel.setTo("Service");
             try {
+                //设置Binder死亡监听
+                messageSender.asBinder().linkToDeath(deathRecipient, 0);
                 messageSender.registerReceiveListener(messageReceiver);
                 messageSender.sendMessage(messageModel);
             } catch (RemoteException e) {

@@ -2,8 +2,10 @@ package com.yezh.sqlite.sqlitetest.aidlservice;
 
 import android.app.Service;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Binder;
 import android.os.IBinder;
+import android.os.Parcel;
 import android.os.RemoteCallbackList;
 import android.os.RemoteException;
 import android.support.annotation.Nullable;
@@ -43,11 +45,30 @@ public class AIDLService extends Service {
             listenerList.unregister(messageReceiver);
         }
 
+        @Override
+        public boolean onTransact(int code, Parcel data, Parcel reply, int flags) throws RemoteException {
+            //第一种：包名验证
+            String packageName = null;
+            String[] packages = getPackageManager().getPackagesForUid(getCallingUid());
+            if(packages != null && packages.length > 0){
+                packageName = packages[0];
+            }
+            if(packageName == null || !packageName.startsWith("com.yezh.sqlite.sqlitetest")){
+                Log.e("test", "拒绝调用" + packageName);
+                return false;
+            }
+            return super.onTransact(code, data, reply, flags);
+        }
     };
 
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {
+        //第二种：自定义权限验证
+        if(checkCallingOrSelfPermission("com.yezh.sqlite.sqlitetest.permission.REMOTE_SERVICE_PERMISSION")
+                == PackageManager.PERMISSION_DENIED){
+            return null;
+        }
         return binder;
     }
 
