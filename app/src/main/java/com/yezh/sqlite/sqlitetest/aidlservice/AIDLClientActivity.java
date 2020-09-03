@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import com.yezh.sqlite.sqlitetest.MessageReceiver;
 import com.yezh.sqlite.sqlitetest.MessageSender;
 import com.yezh.sqlite.sqlitetest.R;
 import com.yezh.sqlite.sqlitetest.data.MessageModel;
@@ -34,9 +35,27 @@ public class AIDLClientActivity extends AppCompatActivity implements View.OnClic
 
     @Override
     protected void onDestroy() {
-        super.onDestroy();
+        //解除消息监听接口
+        if(messageSender != null && messageSender.asBinder().isBinderAlive()){
+            try {
+                Log.e("test", "unregisterReceiveListener");
+                messageSender.unregisterReceiveListener(messageReceiver);
+            } catch (RemoteException e) {
+                e.printStackTrace();
+            }
+        }
         unbindService(serviceConnection);
+        super.onDestroy();
+
     }
+
+    //消息监听回调接口
+    private MessageReceiver messageReceiver = new MessageReceiver.Stub() {
+        @Override
+        public void onMessageReceived(MessageModel m) throws RemoteException {
+            Log.e("test", "onMessageReceived=" + m.toString());
+        }
+    };
 
     private void bindServiceByAidl() {
         Intent intent = new Intent(this, AIDLService.class);
@@ -49,9 +68,10 @@ public class AIDLClientActivity extends AppCompatActivity implements View.OnClic
             Log.e("test", "connected");
             messageSender = MessageSender.Stub.asInterface(service);
             MessageModel messageModel = new MessageModel();
-            messageModel.setFrom("ABCd");
-            messageModel.setTo("123");
+            messageModel.setFrom("Client");
+            messageModel.setTo("Service");
             try {
+                messageSender.registerReceiveListener(messageReceiver);
                 messageSender.sendMessage(messageModel);
             } catch (RemoteException e) {
                 e.printStackTrace();

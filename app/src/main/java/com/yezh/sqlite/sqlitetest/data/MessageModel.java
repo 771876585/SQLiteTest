@@ -12,6 +12,14 @@ public class MessageModel implements Parcelable {
     private String from;
     private String to;
 
+    @Override
+    public String toString() {
+        return "MessageModel{" +
+                "from='" + from + '\'' +
+                ", to='" + to + '\'' +
+                '}';
+    }
+
     public String getFrom() {
         return from;
     }
