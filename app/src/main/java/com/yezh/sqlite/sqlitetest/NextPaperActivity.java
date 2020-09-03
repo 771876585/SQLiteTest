@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
+import com.yezh.sqlite.sqlitetest.aidlservice.AIDLClientActivity;
 import com.yezh.sqlite.sqlitetest.bitmapcache.BitmapCacheActivity;
 import com.yezh.sqlite.sqlitetest.constraintlayout.ConstraintLayoutActivity;
 import com.yezh.sqlite.sqlitetest.flowlayout.FlowActivity;
@@ -32,6 +33,7 @@ public class NextPaperActivity extends AppCompatActivity implements View.OnClick
         findViewById(R.id.lockPwdBtn).setOnClickListener(this);
         findViewById(R.id.stepArcBtn).setOnClickListener(this);
         findViewById(R.id.flowLayoutBtn).setOnClickListener(this);
+        findViewById(R.id.aidlBtn).setOnClickListener(this);
     }
 
     @Override
@@ -57,6 +59,9 @@ public class NextPaperActivity extends AppCompatActivity implements View.OnClick
                 break;
             case R.id.flowLayoutBtn:
                 startActivity(new Intent(this, FlowActivity.class));
+                break;
+            case R.id.aidlBtn:
+                startActivity(new Intent(this, AIDLClientActivity.class));
                 break;
                 default:
                     break;

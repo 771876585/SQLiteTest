@@ -15,7 +15,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".flowlayout.FlowActivity"></activity>
+        <activity android:name=".aidlservice.AIDLClientActivity"></activity>
+        <activity android:name=".flowlayout.FlowActivity" />
         <activity android:name=".stepview.StepArcActivity" />
         <activity android:name=".lockpwd.LockPwdActivity" />
         <activity
@@ -86,6 +87,10 @@
         <service
             android:name=".update.UpdateService"
             android:enabled="true" />
+        <service android:name=".aidlservice.AIDLService"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":remote"/>
     </application>
 
 </manifest>
