@@ -13,6 +13,7 @@ import com.yezh.sqlite.sqlitetest.constraintlayout.ConstraintLayoutActivity;
 import com.yezh.sqlite.sqlitetest.flowlayout.FlowActivity;
 import com.yezh.sqlite.sqlitetest.lockpwd.LockPwdActivity;
 import com.yezh.sqlite.sqlitetest.musicplayer.GaussianBlurActivity;
+import com.yezh.sqlite.sqlitetest.roomtest.RoomActivity;
 import com.yezh.sqlite.sqlitetest.stepview.StepArcActivity;
 
 /**
@@ -34,6 +35,7 @@ public class NextPaperActivity extends AppCompatActivity implements View.OnClick
         findViewById(R.id.stepArcBtn).setOnClickListener(this);
         findViewById(R.id.flowLayoutBtn).setOnClickListener(this);
         findViewById(R.id.aidlBtn).setOnClickListener(this);
+        findViewById(R.id.roomBtn).setOnClickListener(this);
     }
 
     @Override
@@ -62,6 +64,9 @@ public class NextPaperActivity extends AppCompatActivity implements View.OnClick
                 break;
             case R.id.aidlBtn:
                 startActivity(new Intent(this, AIDLClientActivity.class));
+                break;
+            case R.id.roomBtn:
+                startActivity(new Intent(this, RoomActivity.class));
                 break;
                 default:
                     break;
