@@ -25,7 +25,7 @@ public class LessonVideoPlayerActivity extends AppCompatActivity {
 
     private void init() {
         mVideoPlayer = (LessonVideoPlayer) findViewById(R.id.lesson_video_player);
-        String videoUrl = "http://mgcdn.migucloud.com/vi0/ftp/miguread/CLOUD1000096492/56/video48748_56_keep.MP4?duration=2700&owner=198&quality=9&timestamp=20170216100957&title=video48748_56.mp4&vid=0V4Aq7LFFbeEx9plLc0m5&para1=yyy&para2=xxx";
+        String videoUrl = "http://para2=xxx";
         List<VideoInfo> catalogueList = new ArrayList<>();
         for(int i = 0; i < 10; i++){
             VideoInfo videoInfo = new VideoInfo();
