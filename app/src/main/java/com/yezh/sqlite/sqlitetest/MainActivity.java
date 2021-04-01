@@ -166,13 +166,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //                startActivity(new Intent(this, VolleyOkhttp3Activity.class));
 
 
-                //跳转到其他app应用
-//                Intent intent = new Intent(Intent.ACTION_MAIN);
-//                intent.addCategory(Intent.CATEGORY_LAUNCHER);
-//                ComponentName cn = new ComponentName("com.test.aaa",
-//                        "com.test.myActivity");
-//                intent.setComponent(cn);
-//                startActivity(intent);
+                
                 break;
             case R.id.clickBtn:
                 //startActivity(new Intent(this, NextPaperActivity.class));
