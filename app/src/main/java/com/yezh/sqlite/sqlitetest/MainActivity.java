@@ -153,7 +153,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 //startActivity(new Intent(this, FallingActivity.class));
 //                startActivity(new Intent(this, PieActivity.class));
 //                startActivity(new Intent(this, WordsActivity.class));
-                startActivity(new Intent(this, PDFActivity.class));
+               // startActivity(new Intent(this, PDFActivity.class));
 //                startActivity(new Intent(this, ScreenActivity.class));
 
                 break;
@@ -162,7 +162,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //                startActivity(new Intent(this, VideoPlayerActivity.class));
 //                startActivity(new Intent(this, Main2Activity.class));
 //                startActivity(new Intent(this, FullWindowActivity.class));
-                startActivity(new Intent(this, LessonVideoPlayerActivity.class));
+                //startActivity(new Intent(this, LessonVideoPlayerActivity.class));
 //                startActivity(new Intent(this, VolleyOkhttp3Activity.class));
 
 
@@ -175,7 +175,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //                startActivity(intent);
                 break;
             case R.id.clickBtn:
-                startActivity(new Intent(this, NextPaperActivity.class));
+                //startActivity(new Intent(this, NextPaperActivity.class));
                 break;
             default:
 
