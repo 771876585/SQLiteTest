@@ -31,7 +31,7 @@ public class UpdateService extends Service {
         receiver = new DownloadCompleteReceiver();
         //设置下载地址
         DownloadManager.Request down = new DownloadManager.Request(
-                Uri.parse("http://wap.cmread.com/hybc/download/client?enterpriseId=57100019&version=Android_HY_57100019_V4.4_20190814")
+                Uri.parse("http://qqq")
         );
         // 设置允许使用的网络类型，这里是移动网络和wifi都可以
         down.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_MOBILE
@@ -41,7 +41,7 @@ public class UpdateService extends Service {
         // 显示下载界面
         down.setVisibleInDownloadsUi(true);
         // 设置下载后文件存放的位置
-        down.setDestinationInExternalFilesDir(this, Environment.DIRECTORY_DOWNLOADS, "qiyeyuedu.apk");
+        down.setDestinationInExternalFilesDir(this, Environment.DIRECTORY_DOWNLOADS, "123.apk");
         // 将下载请求放入队列
         manager.enqueue(down);
         //注册下载广播
