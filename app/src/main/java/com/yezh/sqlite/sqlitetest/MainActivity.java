@@ -169,8 +169,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 //跳转到其他app应用
 //                Intent intent = new Intent(Intent.ACTION_MAIN);
 //                intent.addCategory(Intent.CATEGORY_LAUNCHER);
-//                ComponentName cn = new ComponentName("com.qiyeyuedu.client",
-//                        "com.cmread.bplusc.bookshelf.LocalMainActivity");
+//                ComponentName cn = new ComponentName("com.test.aaa",
+//                        "com.test.myActivity");
 //                intent.setComponent(cn);
 //                startActivity(intent);
                 break;
